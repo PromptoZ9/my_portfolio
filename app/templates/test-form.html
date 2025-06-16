@@ -1,0 +1,20 @@
+{%extends "layout.html"%}
+{% block blockname %}
+    Homepage
+{% endblock blockname %}
+{% block body %} 
+<form method="POST">
+    {{ form.csrf_token }}
+    {{ form.name.label }} 
+    <div class="mb-6">
+        {{ form.name.label(class="block text-sm font-medium text-white mb-2") }}
+        {{ form.name(class="w-full h-40 p-3 bg-neutral-800 text-white rounded-lg border border-transparent placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 resize-none") }}
+      </div>
+    {{ form.name(size=20) }}
+    {{ form.email.label }} {{ form.email(size=20) }}
+    {{ form.company.label }} {{ form.company(size=20) }}
+    {{ form.description.label }} {{ form.description(size=20) }}
+    <input type="submit" value="Go">
+</form>
+{% endblock body %}
+
